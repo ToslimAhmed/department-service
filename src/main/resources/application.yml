@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: department-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: true
+    properties:
+      hibernate:
+        default_schema: exam
+  datasource:
+    url: jdbc:postgresql://localhost:5432/primax
+    username: postgres
+    password: root
+
+service:
+  properties:
+    short-code: department-service
+    version: v1.0
+#  feign:
+#    gateway-url: http://localhost:8080
+#    client:
+#      employee-service: ${service.feign.gateway-url}/employee-service/
+server:
+  port: 9061
+  servlet:
+    context-path: /department-service
